@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Samya Saha - Portfolio</title>
+</head>
+
+<body style="margin: 0;">
+    <div id="loader">
+        <div class="preloader-container">
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+          <div class="dot dot-3"></div>
+        </div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+            </filter>
+          </defs>
+        </svg>
+
+        <style>
+            .loading {
+              width: 100%;
+              height: 100%;
+              /* background-color: #f8f4d5; */
+              overflow: hidden;
+            }
+
+            .preloader-container {
+              /* overflow: hidden; */
+              width: 200px;
+              height: 200px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              margin: auto;
+              filter: url('#goo');
+              animation: rotate-move 2s ease-in-out infinite;
+            }
+
+            .dot { 
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              background-color: #000;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+            }
+
+            .dot-3 {
+              background-color: #f74d75;
+              animation: dot-3-move 2s ease infinite, index 6s ease infinite;
+            }
+
+            .dot-2 {
+              background-color: #10beae;
+              animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
+            }
+
+            .dot-1 {
+              background-color: #ffe386;
+              animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
+            }
+
+            @keyframes dot-3-move {
+              20% {transform: scale(1)}
+              45% {transform: translateY(-18px) scale(.45)}
+              60% {transform: translateY(-90px) scale(.45)}
+              80% {transform: translateY(-90px) scale(.45)}
+              100% {transform: translateY(0px) scale(1)}
+            }
+
+            @keyframes dot-2-move {
+              20% {transform: scale(1)}
+              45% {transform: translate(-16px, 12px) scale(.45)}
+              60% {transform: translate(-80px, 60px) scale(.45)}
+              80% {transform: translate(-80px, 60px) scale(.45)}
+              100% {transform: translateY(0px) scale(1)}
+            }
+
+            @keyframes dot-1-move {
+              20% {transform: scale(1)}
+              45% {transform: translate(16px, 12px) scale(.45)}
+              60% {transform: translate(80px, 60px) scale(.45)}
+              80% {transform: translate(80px, 60px) scale(.45)}
+              100% {transform: translateY(0px) scale(1)}
+            }
+
+            @keyframes rotate-move {
+              55% {transform: translate(-50%, -50%) rotate(0deg)}
+              80% {transform: translate(-50%, -50%) rotate(360deg)}
+              100% {transform: translate(-50%, -50%) rotate(360deg)}
+            }
+
+            @keyframes index {
+              0%, 100% {z-index: 3}
+              33.3% {z-index: 2}
+              66.6% {z-index: 1}
+            }
+        </style>
+    </div>
+
+    <div id="header-img"></div>
+    
+    <div id="main-body" class="container">
+        <div class="left-col">
+            <div class="profile-pic">
+                <img src="images/profile-pic.jpg" alt="" srcset="">
+            </div>
+            <div class="headline">
+                <h2>Samya Saha</h2>
+                <h4 style="font-weight: normal; opacity: 60%;">
+                    <p>2nd year UG - MnC - IITKGP</p>
+                    <p>samyasahaofficial@gmail.com</p>
+                </h4>
+            </div>
+            <ul class="counts">
+                <li>
+                    <span id="follower-count">0</span><br>
+                    Following
+                </li>
+                <li>
+                    <span id="likes-count">0</span><br>
+                    Likes
+                </li>
+                <li>
+                    <span id="views-count">0</span><br>
+                    Profile views
+                </li>
+            </ul>
+
+            <div>
+                <hr>
+            </div>
+            
+            <div class="about">
+                <p>Hey! This is Samya Saha, a 2nd year UG student pursuing a B.S. degree in MnC under the Department of Mathematics at IIT Kharagpur. I am interested in stuffs like Programming, Development and many more. Below are my social media handles. Feel free to reach out to me :)</p>
+            </div>
+            
+            <div class="social-media-links">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <a href="https://www.facebook.com/SamyaSaha08" target="_blank" class="fa fa-facebook-square"></a>
+                <a href="https://www.instagram.com/SamyaSaha08" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/samyasaha/" target="_blank" class="fa fa-linkedin-square"></a>
+                <a href="https://github.com/Samya-S" target="_blank" class="fa fa-github-square"></a>
+            </div>
+        </div>
+        
+        
+        <div class="right-col">
+            <div class="right-col-banner">
+                <div class="right-col-banner-text">
+                    I know&nbsp;<span id="banner-typing"></span><span class="cursor">&nbsp;</span>
+                </div>
+                <div class="right-col-banner-buttons">
+                    <button id="followButton" onclick="follow()" class="follow">Follow</button>
+                    <button id="likeButton" onclick="like()" class="like">Like</button>
+                </div>
+
+                <style>
+                    .like{
+                        color: #ffffff;
+                        background-color: #00acee; 
+                        border-color: #ffffff00;
+                    }
+                    .liked{
+                        color: #00acee;
+                        background-color: #ffffff; 
+                        border-color: #00acee;
+                    }
+                    .follow{
+                        color: #ffffff;
+                        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                        border-color: #ffffff00;
+                    }
+                    .following{
+                        color: #dc2743;
+                        background-color: #ffffff; 
+                        border-color: #dc2743;
+                    }
+                </style>
+            </div>
+            
+            <div class="right-col-content" style="text-align: left;">
+                <div style="margin-block-end: 0.83em;">
+                    <h2>Projects</h2>
+                    <style>
+                        .right-col-content div h3, .right-col-content div h4{
+                            font-weight: normal;
+                        }
+                        .right-col-content div h4{
+                            color: #4c4c4c;
+                        }
+                        </style>
+                    <div>
+                        <h3>JEE Challenger - A fully frontend development project (website)</h3>
+                        <h4>A completely frontend development project (website) designed solely with HTML, CSS and JavaScript developed during my JEE preparation days to provide a platform for all JEE aspirants, offering comprehensive study materials and resources at one place.</h4>
+                        <h4>Skills:  HTML · Cascading Style Sheets (CSS) · JavaScript · Front-End Development</h4>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 10px; max-width: 400px;">
+                            <a href="https://jeechallenger.netlify.app/" target="_blank" style="text-decoration: none; color: black;">
+                                <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                                    <img src="https://jeechallenger.netlify.app/images/logo-banner3-raw.jpg" alt="" width="1073px" height="577px" style="width: 180px; height: 70px; object-fit: cover; box-shadow: 1px 1px 2px #7a7a7a; border-radius: 10px;">
+                                    <span>The website</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://github.com/Samya-S/jee-challenger---html/" target="_blank" style="text-decoration: none; color: black;">
+                                <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                                    <img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="" width="1073px" height="577px" style="width: 180px; height: 70px; object-fit: cover; box-shadow: 1px 1px 2px #7a7a7a; border-radius: 10px;">
+                                    <span>GitHub repo</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    
+                    <div>
+                        <h3>JEE Challenger Bot - A telegram bot made in Python</h3>
+                        <h4>A telegram bot made in Python using the library python-telegram-bot also known as PTB to automise supply of study materials as requested by JEE aspirants. Currently the code is not made public but the bot stays almost (due to unavailability of good free Python hosting services) online.</h4>
+                        <h4>Skills:  Python · API Integration · Telegram Bot API</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px; max-width: 400px;">
+                            <a href="https://t.me/JEEChallengerOfficialBot" target="_blank" style="text-decoration: none; color: black;">
+                                <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                                    <img src="https://hamon.in/wp-content/uploads/2023/08/Create-a-Telegram-Bot-1.png" alt="" width="1073px" height="977px" style="width: 180px; height: 70px; object-fit: cover; box-shadow: 1px 1px 2px #7a7a7a; border-radius: 10px;">
+                                    <span>Open the bot</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>     
+        </div>
+    </div>
+    
+    <script src="script.js"></script>        
+</body>
+</html>
