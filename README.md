@@ -1,2 +1,2 @@
-# My Portfolio
-This portfolio website is built using HTML, CSS and vanilla JavaScript.
+# My Sample Portfolio
+This sample portfolio website of mine is built using HTML, CSS and vanilla JavaScript.
